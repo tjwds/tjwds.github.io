@@ -11,6 +11,8 @@ before_script:
 script:
   - zola build
 
+fqdn: blog.joewoods.dev
+
 # If you are using a different folder than `public` for the output directory, you will
 # need to change the `zola` command and the `ghp-import` path
 after_success: |
