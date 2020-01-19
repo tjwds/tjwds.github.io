@@ -19,7 +19,7 @@ Nevertheless, self-discovery with the templating engine that Zola uses, [Tera](h
 
 This is sort of silly, but I didn't really give a lot of thought to where I was going to host this blog, or even how it was going to be built.  I sort of arrived at the "JAM Stack" on accident, just because so many things about it are abstracted away to a point where I don't really have to think about it.  I really enjoy the CI deployment structure of other projects I've worked on, where I don't even need to push a button after committing to the publish branch — it just does it for me.
 
-Zola has some pretty good documentation for Github Pages and Travis CI, so I decided to give that a shot.  At time of writing, the Zola documentation doesn't mention that Ubuntu Xenial (16.04, the Travis CI default) fails to build Zola for some reason or other, so I've just added the line `dist: bionic` to my config to build on 18.04 instead.
+Zola has some pretty good documentation for Github Pages and Travis CI, so I decided to give that a shot.  At time of writing, the Zola documentation doesn't mention that Ubuntu Xenial (16.04, the Travis CI default) fails to build Zola for some reason or other, so I've just added the line `dist: bionic` to my config to build on 18.04 instead.  I also had to add the extremely arcane and hard to discover `keep_history: true` line to the config as well to keep my custom domain setting on my repo.
 
 Github Pages works, but it doesn't have a great user experience, in my opinion.  It feels like the whole feature is just a hack that was laid on top of Github that an ecosystem has slowly evolved around… but the feature on Github hasn't really been updated to match.
 
