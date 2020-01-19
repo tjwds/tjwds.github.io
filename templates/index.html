@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Joe Woods</title>
+    {% block css %}
+    <link rel="stylesheet" href="{{ get_url(path="style.css") | safe }}">
+    {% endblock css %}
+    {% block fonts %}
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,700,700i|Raleway:400,500&display=swap" rel="stylesheet">
+    {% endblock fonts %}
+</head>
+<body>
+    <header>
+        <div><a href="/" class="header-name">Joe Woods</a></div>
+        <nav role="navigation">
+            <ul>
+                {% block menu %}
+                    {% set index = get_section(path="_index.md") %}
+                    <li>
+                        <a {% if current_path == "" %}class="active"{% endif %} href="/">Home</a>
+                    </li>
+                    {% for s in index.subsections %}
+                        {% set subsection = get_section(path=s) %}
+                        <li>
+                            <a href="{{ subsection.permalink }}" {% if current_path == subsection.path %}class="active"{% endif %}>
+                                {{ subsection.title }}
+                            </a>
+                            {% if false %}
+                            <!-- if (page) or (current path is subsection) -->
+                            {% endif %}
+                            {% if page or current_path == subsection.path %}
+                            {% if subsection.pages %}
+                            <ul>
+                                {% for page in subsection.pages %}
+                                <li>
+                                    <a href="{{ page.permalink }}" {% if current_path == page.path %}class="active"{% endif %}>
+                                        {{ page.title }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                {% endblock menu %}
+            </ul>
+        </nav>
+    </header>
+    <article>
+        {% block content %}
+        {% endblock content %}
+    </article>
+</body>
+</html>

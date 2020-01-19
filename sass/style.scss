@@ -1,0 +1,106 @@
+body {
+    max-width: 34em;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    font-size: 1.18em;
+    font-family: 'Ibarra Real Nova', serif;
+}
+
+// header
+
+a.active, .header-name {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.active {
+    font-weight: bold;
+}
+
+.header-name {
+    font-size: 3em;
+    // color: #9604f2;
+}
+
+// article
+
+.header-name, nav,
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4, h5, h6 {
+    color: rgba(0, 0, 0, 0.84);
+    font-size: 1.4rem;
+}
+
+p {
+    letter-spacing: -0.0025em;
+    line-height: 1.58;
+    color: rgba(0, 0, 0, 0.84);
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+pre {
+    padding: 2rem 2rem;
+    overflow: scroll;
+    border-radius: 0.3rem;
+    margin-block-start: 3em;
+    margin-block-end: 3em;
+    line-height: 1.1rem;
+    letter-spacing: 0.01rem;
+
+    @media (min-width: 58em) {
+        margin-left: -7em;
+        margin-right: -8em;
+    }
+}
+
+a {
+    color: #9604f2;
+}
+
+figure {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-top: 2em;
+
+    img {
+        width: 100%;
+        height: auto;
+        @media (min-width: 58em) {
+            width: calc(100% + 14em);
+            margin-left: -7em;
+            margin-right: -7em;
+        }
+    }
+
+    figcaption {
+        margin-top: 1em;
+        font-style: italic;
+        font-size: 1rem;
+        font-weight: 400;
+        width: 100%;
+        color: rgba(0, 0, 0, 0.6);
+    }
+}
