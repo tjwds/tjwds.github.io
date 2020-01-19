@@ -1,10 +1,10 @@
 +++
 title="#1:  LEGOs"
+teaser="there was a LEGO on his floor, so I was like, 'you're 19 years old!'"
 +++
 
-# #1:  LEGOs
-
-…and there was a LEGO on his floor, so I was like, 'you're 19 years old!'…
+…there was a LEGO on his floor, so I was like, 'you're 19 years old!'…
+<!-- more -->
 
 …'I'm sorry, it must have come out of the LEGO room'…
 

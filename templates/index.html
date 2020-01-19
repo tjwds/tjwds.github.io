@@ -31,19 +31,6 @@
                             {% if false %}
                             <!-- if (page) or (current path is subsection) -->
                             {% endif %}
-                            {% if page or current_path == subsection.path %}
-                            {% if subsection.pages %}
-                            <ul>
-                                {% for page in subsection.pages %}
-                                <li>
-                                    <a href="{{ page.permalink }}" {% if current_path == page.path %}class="active"{% endif %}>
-                                        {{ page.title }}
-                                    </a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            {% endif %}
-                            {% endif %}
                         </li>
                     {% endfor %}
                 {% endblock menu %}
@@ -52,6 +39,7 @@
     </header>
     <article>
         {% block content %}
+        <p>Hi!  I'm Joe, a software developer in Philadelphia, PA.</p>
         {% endblock content %}
     </article>
 </body>

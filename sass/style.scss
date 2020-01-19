@@ -24,10 +24,21 @@ a.active {
     // color: #9604f2;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+        float: left;
+        padding-right: 1rem;
+    }
+}
+
 // article
 
 .header-name, nav,
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.published-on {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -40,16 +51,23 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.75rem;
 }
 
 h3 {
-    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.5rem;
 }
 
 h4, h5, h6 {
-    color: rgba(0, 0, 0, 0.84);
+    color: rgba(0, 0, 0, 0.4);
     font-size: 1.4rem;
+}
+
+.published-on {
+    font-style: italic;
+    font-size: 1rem;
 }
 
 p {
@@ -71,9 +89,15 @@ pre {
     letter-spacing: 0.01rem;
 
     @media (min-width: 58em) {
-        margin-left: -7em;
+        margin-left: -8em;
         margin-right: -8em;
     }
+}
+
+code {
+    background: #fee;
+    padding: 0.2rem;
+    color:#600;
 }
 
 a {

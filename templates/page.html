@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 
 {% block content %}
+    {% if page.date %}<p class="published-on">Published on {{ page.date }}</p>{% endif %}
+    {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
     {{ page.content | safe }}
 {% endblock content %}
