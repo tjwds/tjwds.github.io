@@ -21,7 +21,11 @@ This is sort of silly, but I didn't really give a lot of thought to where I was 
 
 Zola has some pretty good documentation for Github Pages and Travis CI, so I decided to give that a shot.  At time of writing, the Zola documentation doesn't mention that Ubuntu Xenial (16.04, the Travis CI default) fails to build Zola for some reason or other, so I've just added the line `dist: bionic` to my config to build on 18.04 instead.
 
-I'm hoping that the decision to not host anything myself here will mean that I just never need to think about any of this!
+Github Pages works, but it doesn't have a great user experience, in my opinion.  It feels like the whole feature is just a hack that was laid on top of Github that an ecosystem has slowly evolved around… but the feature on Github hasn't really been updated to match.
+
+For instance, why on earth does my repo name need to be `username.github.io` when I'm using my own domain?  And now, even though I'm a Github Pro user, if I want to add another Github Pages project, I'll need to create a new organization.  That's not fun.
+
+With that being said, I'm hoping that the decision to not host anything myself here will mean that I can not worry about whether or not this site is up!
 
 ## Features
 
