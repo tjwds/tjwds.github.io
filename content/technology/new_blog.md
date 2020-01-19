@@ -77,7 +77,7 @@ Zola has [built-in support for code syntax highlighting](https://www.getzola.org
 Here's an example:
 
 ```javascript
-for (var i = 1; i <= 100; i++) {
+for (let i = 1; i <= 100; i++) {
     if (!(i % 15)) {
         console.log("FizzBuzz");
     }
