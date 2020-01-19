@@ -11,8 +11,6 @@ before_script:
 script:
   - zola build
 
-keep_history: true
-
 # If you are using a different folder than `public` for the output directory, you will
 # need to change the `zola` command and the `ghp-import` path
 after_success: |
@@ -21,4 +19,4 @@ after_success: |
   zola build &&
   sudo pip install ghp-import &&
   ghp-import -n public -b master &&
-  git push -f -q https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git master
+  git push --force-with-lease -q https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git master
