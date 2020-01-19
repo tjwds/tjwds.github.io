@@ -28,9 +28,6 @@
                             <a href="{{ subsection.permalink }}" {% if current_path == subsection.path %}class="active"{% endif %}>
                                 {{ subsection.title }}
                             </a>
-                            {% if false %}
-                            <!-- if (page) or (current path is subsection) -->
-                            {% endif %}
                         </li>
                     {% endfor %}
                 {% endblock menu %}

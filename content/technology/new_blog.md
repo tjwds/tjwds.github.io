@@ -1,7 +1,6 @@
 +++
 title="New Blog"
 date=2020-01-19
-teaser="I have a new blog!  You can find the source [on Github](https://github.com/tjwds/tjwds.github.io)."
 +++
 
 I have a new blog!  You can find the source [on Github](https://github.com/tjwds/tjwds.github.io).

@@ -1,6 +1,6 @@
 +++
 title="#1:  LEGOs"
-teaser="there was a LEGO on his floor, so I was like, 'you're 19 years old!'"
+date=2020-01-16
 +++
 
 …there was a LEGO on his floor, so I was like, 'you're 19 years old!'…
