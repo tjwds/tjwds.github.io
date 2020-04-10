@@ -93,7 +93,8 @@ date=2020-04-10
 }
 </style>
 
-Soon the colors that you see on webpages are going to be a lot more vibrant.  Here's an example; the only problem is, at time of writing, the only browsers that support this example are Safari on iOS and macOS:
+Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is, at time of writing, the only browsers that support this example are Safari on iOS and macOS.
+<!-- more -->
 
 <div class="gradient-block gradient-0">rgb hex values (srgb color space)</div>
 <div class="gradient-block gradient-2">display-p3</div>
