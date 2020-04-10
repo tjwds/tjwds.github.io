@@ -1,5 +1,5 @@
 +++
-title="More Vibrant Colors with CSS"
+title="Colors on the Web Are Getting Intense with display-p3"
 date=2020-04-10
 +++
 
