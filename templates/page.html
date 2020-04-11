@@ -2,9 +2,11 @@
 
 {% block meta_content %}
     {% if page.title %}
+    <title>{{page.title}} — Joe Woods</title>
     <meta name="twitter:title" content="{{page.title}} — Joe Woods">
     <meta property="og:title" content="{{page.title}} — Joe Woods" />
     {% else %}
+    <title>Joe Woods – Blog</title>
     <meta name="twitter:title" content="Joe Woods — Blog">
     <meta property="og:title" content="Joe Woods — Blog" />
     {% endif %}
