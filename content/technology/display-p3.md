@@ -1,7 +1,12 @@
 +++
 title="Colors on the Web Are Getting Intense with display-p3"
 date=2020-04-10
+description="Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is:  most displays and browsers don't support it yet."
 +++
+
+Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is:  most displays and browsers don't support it yet.
+
+<!-- more -->
 
 <style type="text/css">
 .gradient-block {
@@ -92,9 +97,6 @@ date=2020-04-10
     background-color: color(display-p3 1 0.22 0.808)
 }
 </style>
-
-Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is:  most displays and browsers don't support it yet.
-<!-- more -->
 
 Specifically, the `display-p3` property in a css `color` declaration using the `color` function is supported only in Safari on iOS and macOS.
 

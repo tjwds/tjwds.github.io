@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Joe Woods</title>
+
     {% block css %}
     <link rel="stylesheet" href="{{ get_url(path="style.css") | safe }}">
     {% endblock css %}
     {% block fonts %}
     <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,700,700i|Raleway:400,500&display=swap" rel="stylesheet">
     {% endblock fonts %}
+    <link rel="alternate" type="application/rss+xml" title="Joe Woods — Blog" href="https://blog.joewoods.dev/rss.xml" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@tjwds">
+    <meta name="twitter:creator" content="@tjwds">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{config.base_url | safe}}/{{current_path | safe}}" />
+    <meta property="og:site_name" content="Joe Woods — Blog" />
+
+    {% block meta_content %}
+    <title>Joe Woods – Blog</title>
+    <meta name="twitter:title" content="Joe Woods — Blog">
+    <meta property="og:title" content="Joe Woods — Blog" />
+    {% endblock meta_content %}
 </head>
 <body>
     <header>
