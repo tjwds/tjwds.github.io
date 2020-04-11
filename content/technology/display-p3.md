@@ -93,8 +93,10 @@ date=2020-04-10
 }
 </style>
 
-Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is, at time of writing, the only browsers that support this example are Safari on iOS and macOS.
+Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is:  most displays and browsers don't support it yet.
 <!-- more -->
+
+Specifically, the `display-p3` property in a css `color` declaration using the `color` function is supported only in Safari on iOS and macOS.
 
 <div class="gradient-block gradient-0">rgb hex values (srgb color space)</div>
 <div class="gradient-block gradient-2">display-p3</div>
@@ -113,7 +115,7 @@ You've been seeing these colors for a while now.  Film and photography use this 
     content="DCI-P3 D65 v CIExy1931 sRGB.  I say 'inexact' because this is a hastily-done photoshop mashup of two files: <a href='https://commons.wikimedia.org/wiki/File:CIExy1931_sRGB_gamut_D65.png'>one for sRGB</a> and <a href='https://commons.wikimedia.org/wiki/File:DCI-P3_D65.svg'>one for display-p3</a>. This image is likewise licensed under the <a href='https://creativecommons.org/licenses/by-sa/3.0/deed.en'>Creative Commons Attribution-Share Alike 3.0 Unported</a> license."
 ) }}
 
-Some web browsers are already able to render images in alternate color spaces — webkit has some great examples [on this page](https://webkit.org/blog-files/color-gamut/).  But now we have this capability for the rest of the page!  WebKit has [a blog post](https://webkit.org/blog/10042/wide-gamut-color-in-css-with-display-p3/) that goes into detail about the way this works in Safari as expressed in CSS and how it works in the developer tools… but they didn't really show any examples of what it looks like and how it might be used in the near future.
+Some web browsers are already able to render images in alternate color spaces — WebKit has some great examples [on this page](https://webkit.org/blog-files/color-gamut/).  But now we have this capability for the rest of the page!  WebKit has [a blog post](https://webkit.org/blog/10042/wide-gamut-color-in-css-with-display-p3/) that goes into detail about the way this works in Safari as expressed in CSS and how it works in the developer tools… but they didn't really show any examples of what it looks like and how it might be used in the near future.
 
 So what does this mean for web design? Perhaps it means that designers will start including two colors: their first preference and a less vibrant fallback.
 
