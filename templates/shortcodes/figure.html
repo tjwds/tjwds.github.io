@@ -1,5 +1,5 @@
 <figure {% if class %}class="{{class}}"{% endif %}{% if title %}alt="{{title}}" title="{{title}}"{% else %}alt=""{% endif %}>
-    <img src={{src}}{% if not_wide %} class="not-wide"{% endif %}/>
+    <img src="{{src}}"{% if not_wide %} class="not-wide"{% endif %}/>
     {% if content %}
     <figcaption>
         {{ content | safe }}
