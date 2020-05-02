@@ -107,10 +107,12 @@ a {
 img {
     width: 100%;
     height: auto;
-    @media (min-width: 58em) {
-        width: calc(100% + 14em);
-        margin-left: -7em;
-        margin-right: -7em;
+    &:not(.not-wide) {
+        @media (min-width: 58em) {
+            width: calc(100% + 14em);
+            margin-left: -7em;
+            margin-right: -7em;
+        }
     }
     &.no-expand {
         width: 100%;
