@@ -34,6 +34,12 @@ nav ul {
     }
 }
 
+// section
+
+.section-list > li {
+    margin-bottom: 1rem;
+}
+
 // article
 
 .header-name, nav,
@@ -144,4 +150,9 @@ figure {
         width: calc(100vw - 5rem);
         height: calc(calc(100vw - 5rem) / 1.78);
     }
+}
+
+#tracking-pixel {
+    width: 1px;
+    height: 1px;
 }

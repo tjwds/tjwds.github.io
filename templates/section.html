@@ -6,7 +6,7 @@
     {% for s in index.subsections %}
     {% set subsection = get_section(path=s) %}
     {% if current_path == subsection.path and subsection.pages %}
-        <ul>
+        <ul class="section-list">
         {% for page in subsection.pages %}
         <li>
             <a href="{{ page.permalink }}" {% if current_path == page.path %}class="active"{% endif %}>
