@@ -56,13 +56,9 @@ I found an [_extremely_ cool repository of the smallest possible files of many t
 
 Adding a new property is as easy as copying the pixel to a new directory, which you can then filter in your logs.
 
-Preventing caching of the image might be a little difficult, depending on what you're using to build your pages.  I'm using Zola, so it's easy enough to have a cache control query parameter that's unique to each page by just grabbing the number of the current second and the number of nanoseconds past the last whole second:
-
 ```html
-<img id="tracking-pixel" src="https://track.joewoods.dev/blog/track.gif?cache={{now() | date(format='%S%f')}}" alt=""/>
+<img id="tracking-pixel" src="https://track.joewoods.dev/blog/track.gif" alt=""/>
 ```
-
-Since this is calculated for each page, we end up with a unique number.
 
 ## Analysis
 
