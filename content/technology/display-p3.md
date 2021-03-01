@@ -33,6 +33,9 @@ Soon the colors that you see on webpages are going to be a lot more vibrant.  T
 .gradient-5 {
     background: linear-gradient(45deg, color(rec-2020 1 0 0) 10%, color(rec-2020 0 1 0), color(rec-2020 0 0 1) 90%);
 }
+.gradient-6 {
+    background: linear-gradient(45deg, color(xyz 1 0 0) 10%, color(xyz 0 1 0), color(xyz 0 0 1) 90%);
+}
 
 .example-broken {
     background: violet;
@@ -156,5 +159,10 @@ Other color spaces mentioned by the draft, in addition to srgb and display-p3, a
 <div class="gradient-block gradient-3">a98-rgb</div>
 <div class="gradient-block gradient-4">prophoto-rgb</div>
 <div class="gradient-block gradient-5">rec-2020</div>
+<div class="gradient-block gradient-6">xyz</div>
 
 At time of writing, display-p3 is the only alternate color space implemented by any browser.
+
+## Updates
+
+* As of [February 25th, 2021](https://webkit.org/blog/11555/release-notes-for-safari-technology-preview-121/), Safari Technology Preview now supports most of the other colors spaces mentioned in the CSS Color 4 draft!
