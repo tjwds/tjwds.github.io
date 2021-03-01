@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://blog.joewoods.dev/sitemap.xml
