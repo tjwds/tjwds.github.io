@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <link rel="stylesheet" href="https://blog.joewoods.dev/style.css">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,700,700i|Raleway:400,500&display=swap" rel="stylesheet">
+    
+    <link rel="alternate" type="application/rss+xml" title="Joe Woods — Blog" href="https://blog.joewoods.dev/rss.xml" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@tjwds">
+    <meta name="twitter:creator" content="@tjwds">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://blog.joewoods.dev/updates/202010/" />
+    <meta property="og:site_name" content="Joe Woods — Blog" />
+
+    
+    
+    <title>October 2020 — Joe Woods</title>
+    <meta name="twitter:title" content="October 2020 — Joe Woods">
+    <meta property="og:title" content="October 2020 — Joe Woods" />
+    
+    
+
+</head>
+<body>
+    <header>
+        <div><a href="/" class="header-name">Joe Woods</a></div>
+        <nav role="navigation">
+            <ul>
+                
+                    
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;music&#x2F;" >
+                                Music
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;other-thoughts&#x2F;" >
+                                Other Thoughts
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;technology&#x2F;" >
+                                Technology
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;updates&#x2F;" >
+                                Life Updates
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </nav>
+    </header>
+    <article>
+        
+    <p class="published-on">Published on 2020-10-31</p>
+    <h1>October 2020</h1>
+    <p>Want to subscribe to these monthly updates about my life?  <a href="https://blog.joewoods.dev/rss.xml">Here's the RSS feed</a>, and/or you could subscribe via email here:</p>
+<form style="padding:3px;text-align:center;" action="https://tinyletter.com/joewoods" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/joewoods', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail">Enter your email address</label></p><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a></p></form>
+<p>Well, it's my last blog post before the 2020 election, which is basically going to be the only thing on my mind until whatever happens finally sinks in, probably days if not weeks after the results roll in.</p>
+<p>I know you're sick of hearing it, and I am to.  But <strong>please vote</strong> if you can.</p>
+<p>I spend a lot of time thinking about the little time capsules my interactions with the world are leaving behind.  It's Halloween; I walked around a little bit and only took one photo, which is going immediately into the slideshow I will eventually foist upon others any time this part of human history comes up in the future.</p>
+<p>In a lot of ways, these monthly posts are an arrow shot into the future.  You are only ever reading this after October 2020 has already passed.  So, here's the summary again:  I had a great time, despite this terrifying world.  I read a lot, and even let myself relax a little bit.  I hope you had a great month too.</p>
+<h2 id="music">Music</h2>
+<p>I published another blog post with tiny reviews of songs which came out recently, <a href="/music/202010-best/">which you can find here</a>.  Here's the playlist:</p>
+<iframe
+  src="https://open.spotify.com/embed/playlist/2VGB70l4liZDklwh9tGILj"
+  width="100%"
+  height="380"
+  frameborder="0"
+  allowtransparency="true" allow="encrypted-media"></iframe>
+<h2 id="life">Life</h2>
+<p>I have played so many video games this month.  I'm not going to lie, I've spent a lot of time playing Fortnite.  I thought about writing and article about this, but the gist is:  this game is <em>incredibly</em> addictive, it's so much fun to play with friends, and I was so wrong about it.  It's a lot of fun, especially the new Halloween mode.</p>
+<h2 id="programming">Programming</h2>
+<p>I spent some time this month working on a chatbot for a Discord server that some friends and I have put together.  The bot is clearly inspired by <a href="https://github.com/rjbs/Synergy">Synergy</a>; I haven't yet cleaned the code up enough to have it be in a shareable state, but I hope to do that soon, once it is more pluggable via configuration files and not, like, manually writing your routes into the message handler's decision tree.</p>
+<p>So far, the bot can:</p>
+<ul>
+<li>Translate arbitrary text from any language supported by Google Translate into English</li>
+<li>Gently admonish someone if they don't yell in the #yelling channel — that is, if their message contains lowercase characters</li>
+<li>&quot;Follow&quot; a list of twitter accounts and share their tweets in a channel as they're tweeted</li>
+<li>Share an arbitrary color, which it does once a day as the color of the day</li>
+<li>Start a poll by providing the emoji reactions; either ✅ or ❌ as the default, or with emoji provided by the user.  (Think &quot;poll:  what should I have for lunch, 🌮  or 🍔?&quot;)</li>
+<li>Convert text to <a href="http://www.eeemo.net/">Zalgo</a></li>
+<li>Exclaim in surprise if someone says the randomly-chosen secret word, and pass the &quot;said the secret word&quot; role to the person who earned it</li>
+<li>… and a few other secret features!</li>
+</ul>
+<p>I have also written the Instagram flavor of the &quot;put all of the friends in one feed&quot; feature to join Twitter, but it turns out that Instagram has put a blanket ban on all of on all of DigitalOcean <em>and</em> Linode's IPs, which is <em>extremely</em> lame.  Nor have any of these simple proxy pass websites worked, and I'm <em>very</em> reluctant to run this from my home IP, lest I incur the wrath of an immovable corporate machine.  Please reach out if you have any ideas I can try here!</p>
+<p>I have clearly spent a handful of evenings joking around with folks while implementing these tiny plugins, which has been incredibly fun and a great exercise of these programming skills … but it also means that I've hardly worked on the things that I feel I really should have been working on!</p>
+<p>Speaking of &quot;things I should have been working on,&quot; there was just a little bit of progress on <em>failbetter</em> this month.  I've decided to abandon all of the Drupal 9 work I was doing — nothing against the Drupal project, but the sacrifice of user-friendliness and all of the quirks that come with Drupal's history meant that I decided to pull the plug on trying to stay on Drupal.  I'm now experimenting with WordPress, and I think this is the right move, but it's going to take some work to make the content presentation feel like a storied journal with over a decade of history, rather than &quot;Just another WordPress site,&quot; as the slogan on the default WordPress installation always implies.</p>
+<h2 id="reading">Reading</h2>
+<p>First I finished off <em>Royal Assassin</em> by Robin Hobb. It was pretty good, though it would be hard to live up to the first one. I felt like there was a lot of setup to this novel, only for the ending to be very different from what I was expecting. I was honestly a little disappointed by the ending, but I finished it and immediately found myself looking forward to the next.</p>
+<p>Next, by recommendation from a friend, I read <em>Gone Girl</em> by Gillian Flynn. I didn't really find it fun, but the plot had the same motion as a train-wreck you can't look away from. It definitely feels like a story that would do better in the format of film, so I might give the movie try soon.</p>
+<p>Then, of course, I had to round out the Farseer Trilogy with <em>Assassin's Quest</em>.  This book was an interesting finalization of this story arc — though it's clearly not the end to that character's story.  It was definitely an interesting and engaging book that I had a hard time putting down, but I found many of the character's decisions extremely frustrating, and some of the obstacles that character overcame too suddenly vanquished.  Nevertheless, I very highly recommend this trilogy, but I'm having a hard time not letting Robin Hobb's work just completely take over my reading time.  There are sixteen books that take place in this universe!  I'm only 19% done, and Robin Hobb is <em>still writing</em>!  Maybe if I read one of her books as every third book, I'll finish these roughly this time two years from now.</p>
+<p>I also finished <em>The Mythical Man-Month</em> by Fred Brooks.  There are nuggets of wisdom here, but for the most part, I think most of the wisdom imparted by this book has already spread out so wide that I'd heard it in some form or another.  It was useful to see a few of these arguments in context, though.  That all being said, some of the rhetoric in this text points at a deep-rooted chauvinism that shouldn't be excused.</p>
+<h2 id="failbetter"><em>failbetter</em></h2>
+<p>This month, <em>failbetter</em> published two short stories:  &quot;<a href="https://failbetter.com/content/saint-day">Saint of the Day</a>&quot; by Rosemary Harp, and then what is probably one of my favorite works we've ever published, &quot;<a href="https://failbetter.com/content/heavy-one">The Heavy One</a>&quot; by Chika Onyenezi.</p>
+<h2 id="some-other-stats">Some other stats</h2>
+<p>This month,</p>
+<p>I lost a week of keyboard and mouse data. :-(</p>
+<ul>
+<li>I typed at least 790,000 keys and clicked at least 145,168 times.</li>
+<li>I listened to 2,658 songs (+144).</li>
+<li>32 albums escaped from <a href="/music/the-gauntlet/">the Album Gauntlet</a> (-2)</li>
+<li>I wrote 23,427 words in my personal journal (-1,448).</li>
+</ul>
+<p>That's it!  Thanks for reading.  Feel free to get in touch with me any time at joewoods@fastmail.com.</p>
+
+
+    </article>
+    <!-- Privacy-oriented tracking pixel — I do not share information about you,
+         I'm treating your data how I'd like to be treated, etc. -->
+    <img id="tracking-pixel" src="https://track.joewoods.dev/blog/track.gif?cache=23546307158" alt=""/>
+</body>
+</html>

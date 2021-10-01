@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <link rel="stylesheet" href="https://blog.joewoods.dev/style.css">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,700,700i|Raleway:400,500&display=swap" rel="stylesheet">
+    
+    <link rel="alternate" type="application/rss+xml" title="Joe Woods — Blog" href="https://blog.joewoods.dev/rss.xml" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@tjwds">
+    <meta name="twitter:creator" content="@tjwds">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://blog.joewoods.dev/technology/analytics/" />
+    <meta property="og:site_name" content="Joe Woods — Blog" />
+
+    
+    
+    <title>Underengineered, privacy-oriented web analytics — Joe Woods</title>
+    <meta name="twitter:title" content="Underengineered, privacy-oriented web analytics — Joe Woods">
+    <meta property="og:title" content="Underengineered, privacy-oriented web analytics — Joe Woods" />
+    
+    
+    <meta name="description" content="If you already have the tools, you can see what's going on on your site 'for free.'" />
+    <meta name="twitter:description" content="If you already have the tools, you can see what's going on on your site 'for free.'">
+    <meta property="og:description" content="If you already have the tools, you can see what's going on on your site 'for free.'" />
+    
+
+</head>
+<body>
+    <header>
+        <div><a href="/" class="header-name">Joe Woods</a></div>
+        <nav role="navigation">
+            <ul>
+                
+                    
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;music&#x2F;" >
+                                Music
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;other-thoughts&#x2F;" >
+                                Other Thoughts
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;technology&#x2F;" >
+                                Technology
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;updates&#x2F;" >
+                                Life Updates
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </nav>
+    </header>
+    <article>
+        
+    <p class="published-on">Published on 2020-05-03</p>
+    <h1>Underengineered, privacy-oriented web analytics</h1>
+    <p>After circulating a blog post I wrote, I realized I had three questions:</p>
+<ul>
+<li>How do I track views on a Github Pages blog in a way that respects my users' privacy?</li>
+<li>What's a cheap option for web analytics that isn't Google Analytics?</li>
+<li>What on earth am I doing?  What do all of these words mean?</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<p>But really, why <em>doesn't</em> Github offer some way of tracking page views?  I'm sure you have this data, Microsoft, and it seems like more and more folks are using Pages…</p>
+<p>But anyway, I did what any sane software engineer would do and <em>way</em> overthought a web analytics solution for myself. During this process, I sketched out what my ideal paid web analytics service would look like, and I briefly toyed with the idea of setting up some monstrosity of an AWS service to do exactly what I wanted to do.</p>
+<p>But, in the end, I landed on a tried and true technology:  I implemented a tracking pixel.</p>
+<p>I wouldn't consider this a guide for how to do this yourself, per se.  Just consider it a loose collection of ideas that you might be able to use for yourself.</p>
+<h2 id="implementation">Implementation</h2>
+<p>So — how to implement a tracking pixel?  Well, I already have a few DigitalOcean droplets that I can easily slamjam some stuff on, so let's just… do it.</p>
+<p>Our directory structure will look something like this…</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">joe/
+├── track/
+│   ├── blog/
+|   │   └── track.gif
+│   └── index.html
+└── track_logs/
+    └── track-access.log
+</span></pre>
+<p>And we can go ahead and set up the nginx conf to reflect that…</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#b48ead;">server </span><span style="color:#c0c5ce;">{
+    </span><span style="color:#bf616a;">server_name </span><span style="color:#c0c5ce;">track.joewoods.dev;
+</span><span style="color:#b48ead;">
+    location </span><span style="color:#c0c5ce;">/ {
+        </span><span style="color:#bf616a;">root </span><span style="color:#c0c5ce;">/home/joe/track;
+    }
+
+    </span><span style="color:#bf616a;">access_log </span><span style="color:#c0c5ce;">/home/joe/track_logs/track-access.log;
+
+    </span><span style="color:#65737e;"># Cert stuff automanaged by certbot got inserted here</span><span style="color:#c0c5ce;">
+}
+</span></pre>
+<p>I found an <a href="https://github.com/mathiasbynens/small.git"><em>extremely</em> cool repository of the smallest possible files of many types</a> — I went with the transparent gif.  It's 42 bytes.</p>
+<p>Adding a new property is as easy as copying the pixel to a new directory, which you can then filter in your logs.</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">img </span><span style="color:#8fa1b3;">id</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">tracking-pixel</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">src</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">https://track.joewoods.dev/blog/track.gif</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">alt</span><span style="color:#c0c5ce;">=&quot;&quot;/&gt;
+</span></pre><h2 id="analysis">Analysis</h2>
+<p>So now that we have a file of all of our visits, we can run <code>tail -f track_access.log</code> and real-time visitor logs.</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">π.257.420.-1 - - [03/May/2020:13:35:25 +0000] &quot;GET /blog/track.gif HTTP/1.1&quot; 304 0 &quot;https://blog.joewoods.dev/&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0&quot;
+</span></pre>
+<p>I'm sure I'll end up writing some quick scripts if I want to see this visualized in any way, but as of right now, I haven't gotten there yet.  Or I could end up overthinking that too and use Databricks…</p>
+
+
+    </article>
+    <!-- Privacy-oriented tracking pixel — I do not share information about you,
+         I'm treating your data how I'd like to be treated, etc. -->
+    <img id="tracking-pixel" src="https://track.joewoods.dev/blog/track.gif?cache=23535183836" alt=""/>
+</body>
+</html>

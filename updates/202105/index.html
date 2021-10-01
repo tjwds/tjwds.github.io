@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <link rel="stylesheet" href="https://blog.joewoods.dev/style.css">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,700,700i|Raleway:400,500&display=swap" rel="stylesheet">
+    
+    <link rel="alternate" type="application/rss+xml" title="Joe Woods — Blog" href="https://blog.joewoods.dev/rss.xml" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@tjwds">
+    <meta name="twitter:creator" content="@tjwds">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://blog.joewoods.dev/updates/202105/" />
+    <meta property="og:site_name" content="Joe Woods — Blog" />
+
+    
+    
+    <title>May 2021 — Joe Woods</title>
+    <meta name="twitter:title" content="May 2021 — Joe Woods">
+    <meta property="og:title" content="May 2021 — Joe Woods" />
+    
+    
+
+</head>
+<body>
+    <header>
+        <div><a href="/" class="header-name">Joe Woods</a></div>
+        <nav role="navigation">
+            <ul>
+                
+                    
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;music&#x2F;" >
+                                Music
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;other-thoughts&#x2F;" >
+                                Other Thoughts
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;technology&#x2F;" >
+                                Technology
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;updates&#x2F;" >
+                                Life Updates
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </nav>
+    </header>
+    <article>
+        
+    <p class="published-on">Published on 2021-05-31</p>
+    <h1>May 2021</h1>
+    <p>Wow, this month absolutely <em>flew</em> by.  I'm enjoying fully-vaccinated life — though I don't really go out that much still, it's so nice to just, like, go to the dog park and not worry.  I went to the Punk Rock Flea Market!  I took the bus for the first time in something like… 15 months!  I went back to IKEA!  I went back to the arcade!</p>
+<p>Just a little while longer now until the office reopens, and <em>then</em> I'll really feel like the world has shifted back into the place where I want it to be.</p>
+<p>Other than that, there's not a lot going on!  I've shifted to using Habitica again — I used it quite a bit back in 2014, when it was still known as HabitRPG.  Really, I think the delineation between habits, recurring tasks, and todos in Habitica is extremely powerful:  anything that I would try to build for myself would just be emulating that model, anyway, so I might as well use the real thing and maybe hack on it if there's something I'd like to see in it.  It has evolved so much since 2014, though, that I doubt there's anything about it that I'd want to touch!</p>
+<p>I suppose I also have to mention here that I've spent an absurd amount of time reading and learning about investing, a topic which I will only discuss with others if they bring it up first — so I hope that this ends up being the first and last time I mention this thing that's going to take up a not-insignificant amount of my time!</p>
+<h2 id="music">Music</h2>
+<p>Here's this month's installment of the playlist!  I hope you enjoy it.  <a href="/music/202105-best">Here's the article</a>, and here's the playlist on Spotify:</p>
+<iframe
+  src="https://open.spotify.com/embed/playlist/2gWkXjlrXfu2Fyu8T8igRI"
+  width="100%"
+  height="380"
+  frameborder="0"
+  allowtransparency="true" allow="encrypted-media"></iframe>
+<h2 id="programming">Programming</h2>
+<p>I think the theme this month for me has been learning AWS.  I've touched quite a few of the usual suspects:  Lambda, EC2, S3, and DynamoDB, Route 53 and Certificate Manager, EventBridge, Amplify, and CloudFront.  I want to spend more time with both Cognito and API Gateway — I only did a simple tutorial which kind of breezed through it so far — and I think there's a lot to be said about the time I've spent staring at the billing console so far, trying to make sense of it all.</p>
+<p>So a lot of the code I wrote this month outside of work reflects that.</p>
+<p>First, I gave Quirk, my <a href="https://github.com/tjwds/quirk">Discord chatbot framework</a>, persistent memory using DynamoDB.  DynamoDB isn't really a great tool for this job, but with a little wiggling it, it really is an inexpensive database that can be plugged in and completely forgotten about.  I still feel like I'm getting the hang of DynamoDB, but this project was really straight-forward.</p>
+<p>I wrote this pretty cool (in my opinion, at least) visualization of the articles I've been sharing each week: https://dev.joewoods.dev/roundup/.  This is just another way of looking at <a href="notes.joewoods.dev/roundup/">the roundup articles</a>, which I post every Sunday.  The implementation is a React app, which I build and then put the distributed files on a S3 bucket which has a CloudFront distribution pointing at it; for the actual data, I have a Lambda function pull down the raw data from the Pinboard API once per day (using EventBridge) and put it in a file in that same S3 bucket.  I think this way is a win-win:  I avoid expensive processing and instead cache the results, and Maciej doesn't ban me from a service that I use quite a bit.</p>
+<p>Part of my process for the <em>failbetter</em> redesign meant that I wanted to set up a local WordPress theme development workflow; I landed on DevKinsta, a very new tool which mostly acts as a wrapper for Docker, kind of on a lark.  A product of this is that I had to sort of reverse engineer the way their Docker containers work so that I could increase the upload size limit they had set — you can read more about this <a href="https://notes.joewoods.dev/programming/devkinsta-upload-limit/">here</a>.</p>
+<h2 id="reading">Reading</h2>
+<p>Though I mentioned <em>1876</em> in last month's article, I gave up on it pretty early in the month.  You'll see that a sort of pattern emerges throughout Vidal's historical fiction novels; the two I've read so far, <em>Burr</em> and <em>Creation</em>, are set against these magnificent, rich, exciting backdrops.  I just wasn't getting a lot out of the stagnant upper class in New York in 1876, so I decided to put the novel down instead.</p>
+<p>So next I read <em>Fugitive Telemetry</em> by Martha Wells, the next Murderbot short story.  It's, of course, more Murderbot, which means that it's exciting and campy and fun and always feels way too short.  I had a very fun time reading it.</p>
+<p>Next, I made pretty good progress on <em>Fortress Besieged</em> by Qian Zhongshu.  I ended up putting it down after a while, though; I think I just wasn't in the right mindset to read anything but books about spaceships with guns attached to them.</p>
+<p>So, naturally, next I read <em>Providence</em> by Max Barry.  This is like, peak Max Barry content.  I've been a fan of his for a long time — having discovered his work after playing NationStates long ago — and I've always really loved the perspective that each has.  Each of Barry's novels is immensely cinematic, and each pause from the action has a distinct purpose behind it — more often than not, for a giggle.  This kind of creates a tone that could be interpreted by some as immature, but I <em>really</em> don't care.  I'm always ready to get sucked in to an action novel and I have no pretense about it.  Also:  it's a bit of a wild coincidence that Max Barry released this book right at the beginning of the pandemic — it almost begs itself to be read as a COVID-19 allegory, which it clearly could not have been, given the timeline.</p>
+<p>After that, I figured, why not give my brain more sci-fi action?  So, on to <em>Hail Mary</em> by Andy Weir.  This is the third book by Weir that I've read, this one about a different celestial body.  This book is way more out-there than his other two, but still kind of the same; it was a lovely little romp with some clever hooks, just like you'd expect from Andy Weir.</p>
+<h2 id="failbetter"><em>failbetter</em></h2>
+<p>This month, <em>failbetter</em> published:</p>
+<ul>
+<li>&quot;<a href="https://failbetter.com/content/responding-school-shootings-six-proposals-and-some-anticipated-drawbacks">Responding to School Shootings: Six Proposals, and Some Anticipated Drawbacks</a>&quot; by Ben Reed, and,</li>
+<li>&quot;<a href="https://failbetter.com/content/scorpio-rising">Scorpio Rising</a>&quot; by Dale Trumbore</li>
+</ul>
+<h2 id="stats">Stats</h2>
+<ul>
+<li>I typed 980,000 keys and clicked 160,420 times.</li>
+<li>I listened to 1,635 songs.</li>
+<li>16 albums escaped from <a href="/music/the-gauntlet/">the Album Gauntlet</a>.</li>
+<li>I wrote 24,051 words in my personal journal.</li>
+</ul>
+<p>That's it!  Thanks for reading.  Feel free to get in touch with me any time at joewoods@fastmail.com.</p>
+
+
+    </article>
+    <!-- Privacy-oriented tracking pixel — I do not share information about you,
+         I'm treating your data how I'd like to be treated, etc. -->
+    <img id="tracking-pixel" src="https://track.joewoods.dev/blog/track.gif?cache=23541279942" alt=""/>
+</body>
+</html>

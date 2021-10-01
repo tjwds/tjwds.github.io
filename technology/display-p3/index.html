@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <link rel="stylesheet" href="https://blog.joewoods.dev/style.css">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,700,700i|Raleway:400,500&display=swap" rel="stylesheet">
+    
+    <link rel="alternate" type="application/rss+xml" title="Joe Woods — Blog" href="https://blog.joewoods.dev/rss.xml" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@tjwds">
+    <meta name="twitter:creator" content="@tjwds">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://blog.joewoods.dev/technology/display-p3/" />
+    <meta property="og:site_name" content="Joe Woods — Blog" />
+
+    
+    
+    <title>Colors on the Web Are Getting Intense with display-p3 — Joe Woods</title>
+    <meta name="twitter:title" content="Colors on the Web Are Getting Intense with display-p3 — Joe Woods">
+    <meta property="og:title" content="Colors on the Web Are Getting Intense with display-p3 — Joe Woods" />
+    
+    
+    <meta name="description" content="Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is:  most displays and browsers don't support it yet." />
+    <meta name="twitter:description" content="Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is:  most displays and browsers don't support it yet.">
+    <meta property="og:description" content="Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is:  most displays and browsers don't support it yet." />
+    
+
+</head>
+<body>
+    <header>
+        <div><a href="/" class="header-name">Joe Woods</a></div>
+        <nav role="navigation">
+            <ul>
+                
+                    
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;music&#x2F;" >
+                                Music
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;other-thoughts&#x2F;" >
+                                Other Thoughts
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;technology&#x2F;" >
+                                Technology
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;updates&#x2F;" >
+                                Life Updates
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </nav>
+    </header>
+    <article>
+        
+    <p class="published-on">Published on 2020-04-10</p>
+    <h1>Colors on the Web Are Getting Intense with display-p3</h1>
+    <p>Soon the colors that you see on webpages are going to be a lot more vibrant.  The only problem is:  most displays and browsers don't support it yet.</p>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<style type="text/css">
+.gradient-block {
+    width: 100%;
+    height: 10rem;
+    padding: 0.5rem;
+    background: violet;
+}
+.gradient-0 {
+    background: linear-gradient(45deg, #f00 10%, #0f0, #00f 90%);
+}
+.gradient-1 {
+    background: linear-gradient(45deg, color(srgb 1 0 0) 10%, color(srgb 0 1 0), color(srgb 0 0 1) 90%);
+}
+.gradient-2 {
+    background: linear-gradient(45deg, color(display-p3 1 0 0) 10%, color(display-p3 0 1 0), color(display-p3 0 0 1) 90%);
+}
+.gradient-3 {
+    background: linear-gradient(45deg, color(a98-rgb 1 0 0) 10%, color(a98-rgb 0 1 0), color(a98-rgb 0 0 1) 90%);
+}
+.gradient-4 {
+    background: linear-gradient(45deg, color(prophoto-rgb 1 0 0) 10%, color(prophoto-rgb 0 1 0), color(prophoto-rgb 0 0 1) 90%);
+}
+.gradient-5 {
+    background: linear-gradient(45deg, color(rec-2020 1 0 0) 10%, color(rec-2020 0 1 0), color(rec-2020 0 0 1) 90%);
+}
+.gradient-6 {
+    background: linear-gradient(45deg, color(xyz 1 0 0) 10%, color(xyz 0 1 0), color(xyz 0 0 1) 90%);
+}
+
+.example-broken {
+    background: violet;
+    height: 2rem;
+    width: 2rem;
+    margin: 1rem;
+    float: left;
+    display: inline-block;
+}
+
+.less-vibrant-colors, .vibrant-colors {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 2rem 0;
+}
+.less-vibrant-colors {
+    background: linear-gradient(rgb(0, 255, 204), rgb(0, 102, 204));
+}
+.vibrant-colors {
+    background: violet;
+    background: linear-gradient(color(display-p3 0 1 0.8), color(display-p3 0 0.4 0.8));
+}
+
+.less-vibrant-colors--text, .vibrant-colors--text {
+    color: violet;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.less-vibrant-colors--one {
+    color: rgb(255, 255, 0);
+}
+.vibrant-colors--one {
+    color: color(display-p3 1 1 0);
+}
+.less-vibrant-colors--two {
+    font-size: 5rem;
+    color: rgb(255, 182.325, 0);
+}
+.vibrant-colors--two {
+    font-size: 5rem;
+    color: color(display-p3 1 0.715 0);
+}
+
+.vibrant-colors--text {
+    color: violet;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.vibrant-colors--one {
+    color: color(display-p3 1 1 0);
+}
+.vibrant-colors--two {
+    font-size: 5rem;
+    color: color(display-p3 1 0.715 0);
+}
+
+.lyft-one {
+    background-color: #ff00bf;
+}
+.lyft-two {
+    background-color: color(display-p3 1 0.22 0.808)
+}
+</style>
+<p>Specifically, the <code>display-p3</code> property in a css <code>color</code> declaration using the <code>color</code> function is supported only in Safari on iOS and macOS.</p>
+<div class="gradient-block gradient-0">rgb hex values (srgb color space)</div>
+<div class="gradient-block gradient-2">display-p3</div>
+<div>
+<div class="example-broken"></div>
+<p>Note:  if, at any point, you see an example that has a &quot;violet&quot; background color like the element to the left, it means that your browser doesn't support rendering the example.</p>
+</div>
+<p>You've been seeing these colors for a while now.  Film and photography use this color space (or one close to it) to represent vivid colors that are closer to real life.  This gives color that &quot;HDR&quot; feel. Here's an inexact comparison of the available colors in each color gamut:  display-p3 gives you access to not only a wider range of colors, but the more intense colors that sRGB is lacking:</p>
+<figure alt="DCI-P3 D65 v CIExy1931 sRGB" title="DCI-P3 D65 v CIExy1931 sRGB">
+    <img src="&#x2F;images&#x2F;color_gamut.jpg"/>
+    <figcaption>
+        DCI-P3 D65 v CIExy1931 sRGB.  I say 'inexact' because this is a hastily-done photoshop mashup of two files: <a href='https://commons.wikimedia.org/wiki/File:CIExy1931_sRGB_gamut_D65.png'>one for sRGB</a> and <a href='https://commons.wikimedia.org/wiki/File:DCI-P3_D65.svg'>one for display-p3</a>. This image is likewise licensed under the <a href='https://creativecommons.org/licenses/by-sa/3.0/deed.en'>Creative Commons Attribution-Share Alike 3.0 Unported</a> license.
+    </figcaption>
+</figure>
+<p>Some web browsers are already able to render images in alternate color spaces — WebKit has some great examples <a href="https://webkit.org/blog-files/color-gamut/">on this page</a>.  But now we have this capability for the rest of the page!  WebKit has <a href="https://webkit.org/blog/10042/wide-gamut-color-in-css-with-display-p3/">a blog post</a> that goes into detail about the way this works in Safari as expressed in CSS and how it works in the developer tools… but they didn't really show any examples of what it looks like and how it might be used in the near future.</p>
+<p>So what does this mean for web design? Perhaps it means that designers will start including two colors: their first preference and a less vibrant fallback.</p>
+<div class="less-vibrant-colors">
+<div class="less-vibrant-colors--text less-vibrant-colors--one">less vibrant</div>
+<div class="less-vibrant-colors--text less-vibrant-colors--two">colors</div>
+</div>
+<div class="vibrant-colors">
+<div class="vibrant-colors--text vibrant-colors--one">more vibrant</div>
+<div class="vibrant-colors--text vibrant-colors--two">colors</div>
+</div>
+<p>Pantone's color of the year for 2013, Emerald 17-5641, <a href="hhttps://dot-color.com/2012/12/11/color-of-the-year-for-2013-falls-outside-srgb-gamut/">is outside of sRGB</a>, but now you can use it in Safari… that is, if you can get ahold of its relative display-p3 values. I couldn't.</p>
+<p>Maybe Lyft could dive even further into magenta:</p>
+<div class="gradient-block lyft-one">Lyft pink hex codes from Lyft's March 2018 brand guidelines</div>
+<div class="gradient-block lyft-two">A more intense pink in display-p3 (or the css 'violet' value if your browser doesn't support display-p3… which is a little too similar to this example, sorry!!)</div>
+<p>The <a href="https://www.w3.org/TR/css-color-4/#predefined">CSS Color Module Level 4 working draft</a> defines a <code>color</code> function which allows you to choose your color space.  Here's one example from this page:</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#8fa1b3;">.</span><span style="color:#d08770;">less-vibrant-colors--one </span><span style="color:#c0c5ce;">{
+    color: </span><span style="color:#96b5b4;">rgb</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">255</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">255</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">);
+}
+</span><span style="color:#8fa1b3;">.</span><span style="color:#d08770;">vibrant-colors--one </span><span style="color:#c0c5ce;">{
+    color: </span><span style="color:#96b5b4;">color</span><span style="color:#c0c5ce;">(display-p</span><span style="color:#d08770;">3 1 1 0</span><span style="color:#c0c5ce;">);
+}
+</span></pre>
+<p>Other color spaces mentioned by the draft, in addition to srgb and display-p3, are a98-rgb, prophoto-rgb and rec-2020.</p>
+<div class="gradient-block gradient-0">rgb hex values (srgb color space)</div>
+<div class="gradient-block gradient-1">srgb (just a different way of expressing the values above!)</div>
+<div class="gradient-block gradient-2">display-p3</div>
+<div class="gradient-block gradient-3">a98-rgb</div>
+<div class="gradient-block gradient-4">prophoto-rgb</div>
+<div class="gradient-block gradient-5">rec-2020</div>
+<div class="gradient-block gradient-6">xyz</div>
+<p>At time of writing, display-p3 is the only alternate color space implemented by any browser.</p>
+<h2 id="updates">Updates</h2>
+<ul>
+<li>As of <a href="https://webkit.org/blog/11555/release-notes-for-safari-technology-preview-121/">February 25th, 2021</a>, Safari Technology Preview now supports most of the other colors spaces mentioned in the CSS Color 4 draft!</li>
+</ul>
+
+
+    </article>
+    <!-- Privacy-oriented tracking pixel — I do not share information about you,
+         I'm treating your data how I'd like to be treated, etc. -->
+    <img id="tracking-pixel" src="https://track.joewoods.dev/blog/track.gif?cache=23536232397" alt=""/>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <link rel="stylesheet" href="https://blog.joewoods.dev/style.css">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,700,700i|Raleway:400,500&display=swap" rel="stylesheet">
+    
+    <link rel="alternate" type="application/rss+xml" title="Joe Woods — Blog" href="https://blog.joewoods.dev/rss.xml" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@tjwds">
+    <meta name="twitter:creator" content="@tjwds">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://blog.joewoods.dev/updates/202005/" />
+    <meta property="og:site_name" content="Joe Woods — Blog" />
+
+    
+    
+    <title>May 2020 — Joe Woods</title>
+    <meta name="twitter:title" content="May 2020 — Joe Woods">
+    <meta property="og:title" content="May 2020 — Joe Woods" />
+    
+    
+
+</head>
+<body>
+    <header>
+        <div><a href="/" class="header-name">Joe Woods</a></div>
+        <nav role="navigation">
+            <ul>
+                
+                    
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;music&#x2F;" >
+                                Music
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;other-thoughts&#x2F;" >
+                                Other Thoughts
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;technology&#x2F;" >
+                                Technology
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;updates&#x2F;" >
+                                Life Updates
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </nav>
+    </header>
+    <article>
+        
+    <p class="published-on">Published on 2020-05-31</p>
+    <h1>May 2020</h1>
+    <figure alt="Our lives begin to end the day we become silent about things that matter." title="Our lives begin to end the day we become silent about things that matter.">
+    <img src="https:&#x2F;&#x2F;images.unsplash.com&#x2F;photo-1502987885409-2951c345e1b4?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2252&amp;q=80"/>
+    <figcaption>
+        Photo by <a href='https://unsplash.com/photos/i4Uh2mxdFzo'>Joe Woods on Unsplash</a>
+    </figcaption>
+</figure>
+<p>I hope you're doing well.</p>
+<h2 id="music">Music</h2>
+<p>I published another blog post with tiny reviews of songs which came out recently, <a href="/music/202005-best/">which you can find here</a>.  Here's the playlist:</p>
+<iframe
+  src="https://open.spotify.com/embed/playlist/7qtT6WuMs0y6D7LnsPdsmR?si=IBCE8pK2RpGBqxwyE8U28Q"
+  width="100%"
+  height="380"
+  frameborder="0"
+  allowtransparency="true" allow="encrypted-media"></iframe>
+<h2 id="planting">Planting</h2>
+<figure alt="New lemon tree, which we&#x27;ve named Stanley, in a pot" title="New lemon tree, which we&#x27;ve named Stanley, in a pot">
+    <img src="&#x2F;images&#x2F;202005-stanley.jpg" class="not-wide"/>
+</figure>
+<p>M got us a lemon tree, which I helped her plant.  His name is Stanley, and he joins Zadok in the semi-tropical bedroom tree club.  Essentially, unless we ever get rid of these guys (and I hope we never do), they're going to have to live in the bedroom — we have to make sure we keep the cats away from it, and he definitely wouldn't survive the Pennsylvanian winters.</p>
+<p>We also did some slight rearranging on the back porch, making sure our herbs have enough room to grow for the upcoming season.</p>
+<h2 id="programming">Programming</h2>
+<h3 id="duolingo-kanjidamage-helper">Duolingo KanjiDamage helper</h3>
+<p>I wrote a small little Greasemonkey script to add KanjiDamage links to the Duolingo vocabulary page.  It only works when loading the vocabulary page, but I may clean it up and share it in the future.</p>
+<p><em>Caution:  the content on KanjiDamage is <em>extremely</em> not safe for work.  Proceed with caution!</em></p>
+<p>I have been doing Duolingo pretty regularly, but of course, I can't just completely trust their &quot;let us handle everything about your language learning experience for you&quot; approach.  Sometimes I'll feel like I need to go and get additional context from an external source, which is, you know, to be expected when you learn a language.  This is where KanjiDamage mostly comes in, for me:  I feel like I've been doing a very bad job of actually <em>learning</em> the kanji as opposed to learning how to recognize them.</p>
+<h3 id="jamstack-access-logs">JAMstack access logs</h3>
+<p>I've come up with a rather silly way of tracking who has accessed this blog, which I wrote more about <a href="/technology/analytics">here</a>.  Basically, there's a single static asset which lives on one of my Digital Ocean boxes, and then I can read the access logs there.  Since writing the blog post which explains how and why I did this, I've also written a little script for myself which will pull down the logs from the server and reformat them, geolocating the IP, and making the user agent string more readable.</p>
+<p>This is, of course, giving me other ideas, so I've also started toying with how I could make this scale for other sites that I run.  I've played around with how I could host the files on S3, and I also read the Sails documentation and poked at it a little bit to see if I could build some sort of visualization of the data I already have.</p>
+<h2 id="reading">Reading</h2>
+<p>This month I read Marja Hölttä's <a href="https://v8.dev/blog/understanding-ecmascript-part-1">Understanding the ECMAScript spec</a> series and spent a lot of time organizing my RSS feeds.  I've sort of unofficially challenged myself to read every single article ever posted on <a href="https://web.dev/blog/">web.dev's blog</a>, but in order to accomplish this, I had to radically rethink the way that I save things to read, removing them from the main RSS feed bucket and giving them their own section in Reeder.</p>
+<p>So, with this being my new mission, I also need to make sure that I read more articles on web.dev than are published each week, which is quite a lot!  That being said, I really do think that this is the best use of the time I've set aside in my life to gain general programming knowledge right now — web.dev is likely the closest thing to a textbook of best practices for developing for the web that exists.</p>
+<p>Also, working on an email service, I have finally gotten around to reading the IMAP specification (4rev1).</p>
+<p>I am still reading <em>2666</em>.  I have finally escaped to the other side of &quot;The Part about the Crimes,&quot; which was a real slog, and horrible to read right before bed.  I really enjoyed all of the other chapters, so I hope the final chapter will be as good as the others, but it was very hard to make it through that chapter, on the scale of Moby Dick and Infinite Jest.  As I read, I like to evaluate how I'm currently enjoying what I'm reading, which usually takes the form of &quot;what rating would I give this book on Goodreads right now?&quot;  Right now I'm sitting at a two, but before this chapter, I was thinking four or five.</p>
+<h2 id="failbetter">failbetter</h2>
+<p><em>failbetter</em> published two poems from John Grey, <a href="http://failbetter.com/content/coma">&quot;Coma&quot;</a> and <a href="http://failbetter.com/content/reasons-shoot-guy">&quot;Reasons to Shoot the Guy&quot;</a>.  We also published a short fiction piece, <a href="http://failbetter.com/content/angie-rubio%E2%80%99s-report-card-angie-rubio%E2%80%99s-mother">&quot;Angie Rubio’s Report Card by Angie Rubio’s Mother&quot;</a>, from Donna Miscolta.</p>
+<h2 id="some-other-stats">Some other stats</h2>
+<p>This month,</p>
+<ul>
+<li>I typed 740,000 keys (-30,391) and clicked 154,217 (-5,200) times.</li>
+<li>I listened to 2098 songs (-53).</li>
+<li>22 albums escaped from the Album Gauntlet (-5).</li>
+<li>I wrote 23575 words in my personal journal (+3073).</li>
+</ul>
+<p>That's it!  Thanks for reading.  Feel free to get in touch with me any time at joewoods@fastmail.com.</p>
+
+
+    </article>
+    <!-- Privacy-oriented tracking pixel — I do not share information about you,
+         I'm treating your data how I'd like to be treated, etc. -->
+    <img id="tracking-pixel" src="https://track.joewoods.dev/blog/track.gif?cache=23550606344" alt=""/>
+</body>
+</html>

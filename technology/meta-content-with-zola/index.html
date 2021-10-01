@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <link rel="stylesheet" href="https://blog.joewoods.dev/style.css">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,700,700i|Raleway:400,500&display=swap" rel="stylesheet">
+    
+    <link rel="alternate" type="application/rss+xml" title="Joe Woods — Blog" href="https://blog.joewoods.dev/rss.xml" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@tjwds">
+    <meta name="twitter:creator" content="@tjwds">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://blog.joewoods.dev/technology/meta-content-with-zola/" />
+    <meta property="og:site_name" content="Joe Woods — Blog" />
+
+    
+    
+    <title>Meta Content with Zola — Joe Woods</title>
+    <meta name="twitter:title" content="Meta Content with Zola — Joe Woods">
+    <meta property="og:title" content="Meta Content with Zola — Joe Woods" />
+    
+    
+    <meta name="description" content="I added meta tags and an RSS feed to my site today." />
+    <meta name="twitter:description" content="I added meta tags and an RSS feed to my site today.">
+    <meta property="og:description" content="I added meta tags and an RSS feed to my site today." />
+    
+
+</head>
+<body>
+    <header>
+        <div><a href="/" class="header-name">Joe Woods</a></div>
+        <nav role="navigation">
+            <ul>
+                
+                    
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;music&#x2F;" >
+                                Music
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;other-thoughts&#x2F;" >
+                                Other Thoughts
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;technology&#x2F;" >
+                                Technology
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;blog.joewoods.dev&#x2F;updates&#x2F;" >
+                                Life Updates
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </nav>
+    </header>
+    <article>
+        
+    <p class="published-on">Published on 2020-04-11</p>
+    <h1>Meta Content with Zola</h1>
+    <p>I added meta tags and an RSS feed to my site today.</p>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h2 id="rss">RSS</h2>
+<p>&quot;RSS, you say?&quot; I hear you ask.  Yes, RSS.  I've very recently started subscribing to RSS feeds for software releases, so naturally my site needs <a href="https://blog.joewoods.dev/rss.xml">a feed</a> too.</p>
+<p>Adding this in Zola is really straight-forward:  first, tell Zola to generate RSS in your <code>config.toml</code> file:</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#65737e;"># adds /rss.xml
+</span><span style="color:#bf616a;">generate_rss </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">true
+</span></pre>
+<p>You should also add a reference to it the <code>head</code> of your templates — if you're like me and everything extends the same index template, this is simple:</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">property</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">og:url</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">{{config.base_url | safe}}/{{current_path | safe}}</span><span style="color:#c0c5ce;">&quot; /&gt;
+</span></pre><h2 id="meta-open-graph-twitter-card">Meta, Open Graph, Twitter card</h2>
+<p>You'll see a lot of bias in my implementation here:  I don't define a site-wide picture (yet?) because I can't think of one that I want to add right now, and I've skipped some meta information that other people might want to add, like your Facebook Brand Id.  I'm also duplicating the description tag for each metadata collection type, mostly out of laziness… it's not strictly necessary to overwrite the meta description with, say, the <code>og:description</code> property, but I figure it doesn't hurt in case someone's written a really bizarre meta tag parser.</p>
+<p>So, generally, you should use what I'm doing on my site as more of a general idea of how to accomplish this in Zola, without copying what I've done exactly.  Do your own research as to what meta tags you want to include.</p>
+<p>In my index template, I have a big block of meta tags that are separated into two sections:  things which will be true for every page on the site, and things that should be overwritten in specific articles.  The latter category has been placed in a <code>meta_content</code> block:</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">twitter:card</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">summary</span><span style="color:#c0c5ce;">&quot;&gt;
+&lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">twitter:site</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">@tjwds</span><span style="color:#c0c5ce;">&quot;&gt;
+&lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">twitter:creator</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">@tjwds</span><span style="color:#c0c5ce;">&quot;&gt;
+&lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">property</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">og:type</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">article</span><span style="color:#c0c5ce;">&quot; /&gt;
+&lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">property</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">og:url</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">{{config.base_url | safe}}/{{current_path | safe}}</span><span style="color:#c0c5ce;">&quot; /&gt;
+&lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">property</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">og:site_name</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">Joe Woods — Blog</span><span style="color:#c0c5ce;">&quot; /&gt;
+
+{% block meta_content %}
+&lt;</span><span style="color:#bf616a;">title</span><span style="color:#c0c5ce;">&gt;Joe Woods – Blog&lt;/</span><span style="color:#bf616a;">title</span><span style="color:#c0c5ce;">&gt;
+&lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">twitter:title</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">Joe Woods — Blog</span><span style="color:#c0c5ce;">&quot;&gt;
+&lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">property</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">og:title</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">Joe Woods — Blog</span><span style="color:#c0c5ce;">&quot; /&gt;
+{% endblock meta_content %}
+</span></pre>
+<p>Which I then programmatically overwrite on my <code>page</code> template:</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">{% block meta_content %}
+    {% if page.title %}
+    &lt;</span><span style="color:#bf616a;">title</span><span style="color:#c0c5ce;">&gt;{{page.title}} — Joe Woods&lt;/</span><span style="color:#bf616a;">title</span><span style="color:#c0c5ce;">&gt;
+    &lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">twitter:title</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">{{page.title}} — Joe Woods</span><span style="color:#c0c5ce;">&quot;&gt;
+    &lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">property</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">og:title</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">{{page.title}} — Joe Woods</span><span style="color:#c0c5ce;">&quot; /&gt;
+    {% else %}
+    &lt;</span><span style="color:#bf616a;">title</span><span style="color:#c0c5ce;">&gt;Joe Woods – Blog&lt;/</span><span style="color:#bf616a;">title</span><span style="color:#c0c5ce;">&gt;
+    &lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">twitter:title</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">Joe Woods — Blog</span><span style="color:#c0c5ce;">&quot;&gt;
+    &lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">property</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">og:title</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">Joe Woods — Blog</span><span style="color:#c0c5ce;">&quot; /&gt;
+    {% endif %}
+    {% if page.description %}
+    &lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">description</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">{{ page.description | safe }}</span><span style="color:#c0c5ce;">&quot; /&gt;
+    &lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">twitter:description</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">{{ page.description | safe }}</span><span style="color:#c0c5ce;">&quot;&gt;
+    &lt;</span><span style="color:#bf616a;">meta </span><span style="color:#d08770;">property</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">og:description</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">content</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">{{ page.description | safe }}</span><span style="color:#c0c5ce;">&quot; /&gt;
+    {% endif %}
+{% endblock meta_content %}
+</span></pre>
+<p>&quot;What sort of article isn't going to have a title??&quot; I hear you interject.  I don't know!  But, you know, better safe than sorry — it's better, in my opinion, to make the case for this now, as opposed to forgetting to fix it later.  Say I wanted to move off of blog.joewoods.dev — it's unlikely that I would, but who knows what will happen years down the line.  If I had hard-coded that value instead of using <code>{{config.base_url | safe}}</code>, I probably would have forgotten to update it there, and my blog would be shouting wrong information into the void until the end of time.</p>
+
+
+    </article>
+    <!-- Privacy-oriented tracking pixel — I do not share information about you,
+         I'm treating your data how I'd like to be treated, etc. -->
+    <img id="tracking-pixel" src="https://track.joewoods.dev/blog/track.gif?cache=23535761231" alt=""/>
+</body>
+</html>
